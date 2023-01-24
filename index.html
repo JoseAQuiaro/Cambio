@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<Html>
+</HEad>
+    <meta charset="UTF-8">
+    <TItle>Convertidor de Monedas</TItle>
+    <script type="text/javascript">
+        function convertir() {
+            var valore = parseInt(document.getElementById("valor").value);
+            var resultado = 0;
+            var Rial = 3.99;
+            var Bolívar = 4.86;
+            if (document.getElementById("uno").checked){
+                resultado = valore * Rial;
+                alert("El cambio de Rial a Bolívar es: Bs. " + resultado.toFixed(2));
+            }
+            else if (document.getElementById("dos").checked){
+                resultado = valore / Bolívar;
+                alert("El cambio de Bolívar a Rial es:R$. " + resultado.toFixed(2));
+            }
+            else{
+                alert("Tienes que completar todos los requerimientos")
+            }
+        }
+</script>
+</head>
+<body>
+    <h3>Soluciones Digitales Operador Cambiario</h3>
+    <form class="formulario">
+        <p>Seleccionar moneda a enviar:</p>
+        <input type="radio" name="cambio" id="uno">Rial
+        <input type="radio" name="cambio" id="dos">Bolívar
+        <p>Ingrese monto:</p>
+        <input type="number" id="valor" min="1" max="100000">
+        <input type="button" id="cotizador" value="Cotizar"  onclick="convertir()">
+    </form>
+</body>
+</html>
